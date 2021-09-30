@@ -1,0 +1,27 @@
+version: "3"
+services:
+  web-1:
+    image: "jmalloc/echo-server"
+    ports:
+      - 8081:8080
+    networks:
+      default:
+        ipv4_address: 172.31.0.2
+  web-2:
+    image: "jmalloc/echo-server"
+    ports:
+      - 8082:8080
+    networks:
+      default:
+        ipv4_address: 172.31.0.3
+  haproxy:
+    image: "haproxytech/haproxy-alpine:2.4"
+    ports:
+      - 80:80
+      - 8404:8404
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+networks:
+  default:
+    external:
+      name: bridge-1

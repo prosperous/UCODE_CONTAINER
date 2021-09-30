@@ -1,0 +1,3 @@
+A /01.sh
+C /root
+A /root/.bash_history

@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  web_app_1:
+    image: visemenov/simpleweb
+    container_name: web-1
+    ports:
+      - "81:80"
+    
+  web_app_2:
+    image: visemenov/simpleweb
+    container_name: web-2
+    ports:
+      - "82:80"

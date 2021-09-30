@@ -1,0 +1,1 @@
+docker commit testapp myapp
